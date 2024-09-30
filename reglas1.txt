@@ -1,0 +1,6 @@
+A,N => E
+L,M => E
+A => M
+Q,¬W,¬Z => N
+Z,L => S
+B,C => Q

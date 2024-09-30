@@ -1,0 +1,3 @@
+Sun is behind the clouds,air is very cool => we suspect temperature is less than 20
+we suspect temperature is less than 20,there is humidity in the air => there are chances of rain
+air is very heavy => there is humidity in the air
