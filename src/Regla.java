@@ -1,23 +1,53 @@
+import java.util.ArrayList;
 import java.util.List;
-class Regla {
-    private List<String> premisas;
-    private String conclusion;
 
-    public Regla(List<String> premisas, String conclusion) {
-        this.premisas = premisas;
-        this.conclusion = conclusion;
+enum TipoRegla {
+    AND, // Quiere decir que todas las reglas o hechos tienen que ser validados por AND
+    OR
+}
+
+class Regla {
+    private List<Object> premisas; // Object porque Hecho | Regla
+    private Hecho conclusion;
+    private TipoRegla tipo;
+
+    public Regla(){
+        premisas = new ArrayList<>();
+        conclusion = new Hecho();
+        tipo = TipoRegla.AND;
     }
 
-    public List<String> getPremisas() {
+    public Regla(List<Object> premisas, Hecho conclusion, TipoRegla tipo) {
+        this.premisas = premisas;
+        this.conclusion = conclusion;
+        this.tipo = tipo;
+    }
+
+    public List<Object> getPremisas() {
         return premisas;
     }
 
-    public String getConclusion() {
+    public void setPremisas(List<Object> premisas) {
+        this.premisas = premisas;
+    }
+
+    public Hecho getConclusion() {
         return conclusion;
     }
 
-    @Override
-    public String toString() {
-        return premisas + " => " + conclusion;
+    public void setConclusion(Hecho conclusion) {
+        this.conclusion = conclusion;
+    }
+
+    public TipoRegla getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoRegla tipo) {
+        this.tipo = tipo;
+    }
+
+    public void addPremisa(Object premisa) {
+        premisas.add(premisa);
     }
 }

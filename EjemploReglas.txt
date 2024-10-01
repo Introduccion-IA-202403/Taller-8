@@ -1,0 +1,3 @@
+(SuspectTemp20 AND HumidityAir) IMPLIES ChancesRain
+(SunBehindClouds AND AirCool) IMPLIES SuspectTemp20
+(AirHeavy) IMPLIES HumidityAir
